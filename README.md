@@ -15,7 +15,7 @@ For Team3
 
 7. Nurul Syafawani binti mohd saad
 
-**Project Requirement
+**Project Requirement**
 
 1. **CLONE** all java files from GitHub to your computer based on listed GitHub accounts. The list can be obtained from the TEST_FILES.
 2. The folder name or location to be downloaded to your computer will be specified (input) by the user.
