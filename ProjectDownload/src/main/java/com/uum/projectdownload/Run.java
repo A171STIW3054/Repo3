@@ -49,7 +49,7 @@ public class Run {
                 String path = list[i].replace(namaFile, "");
                 
                 String workingDirectory = System.getProperty("user.dir");
-                String folder = workingDirectory + File.separator + "Output";
+                String folder = workingDirectory + File.separator + "Output.txt";
 
                 Process p = null;
                 try {
