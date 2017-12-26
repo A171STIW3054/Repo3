@@ -21,10 +21,7 @@ public class Filter {
 
     public Filter() {
         Collection<File> all = new ArrayList<>();
-        //addTree(new File("C:\\Users\\Badrul\\Documents\\NetBeansProjects\\Assignment1\\test"), all);
         addTree(new File(System.getProperty("user.dir") + File.separator + "STIW3054-A171"), all);
-        //System.out.println(System.getProperty("user.dir") + File.separator + "test");
-        //Change File Directory Here
         Collection<File> a = all;
         listJavaFile = filterJava(a);
     }
@@ -52,9 +49,8 @@ public class Filter {
         String[] listJavaFile = new String[fb.size()];
         for (int i = 0; i < fb.size(); i++) {
             listJavaFile[i] = fb.get(i);
-            System.out.println(listJavaFile[i]);
+            //System.out.println(listJavaFile[i]);
         }
-        //System.out.println(listJavaFile.toString());
         return listJavaFile;
     }
 
