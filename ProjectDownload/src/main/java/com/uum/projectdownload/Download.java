@@ -44,12 +44,7 @@ public class Download implements Runnable {
             
              absolutePath = folder + File.separator + name[i];
              File localPath = new File(absolutePath);
-            //File localPath = File.createTempFile(name[i], new File("C:\\Users\\Owner\\Desktop\\STIW3054-A171"));
-            //if (!localPath.delete()) {
-              //  throw new IOException("Could not delete temporary file " + localPath);
-            //}
 
-            // then clone 
             System.out.println("Cloning from " + link[i] + " to " + localPath);
             try (Git result = Git.cloneRepository()
                     .setURI(link[i])
@@ -62,7 +57,7 @@ public class Download implements Runnable {
                 
                 PrintStream log = null;
                  try {
-                     String folder1 = workingDirectory + File.separator + "LOG";
+                     String folder1 = workingDirectory + File.separator + "LOG.txt";
                      log = new PrintStream(new File(folder1));
                      System.setOut(log);
                      log.print(ex);
