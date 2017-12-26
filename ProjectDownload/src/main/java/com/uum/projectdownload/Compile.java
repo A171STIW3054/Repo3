@@ -11,6 +11,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintStream;
 import java.util.logging.*;
 
 /**
@@ -39,8 +40,7 @@ public class Compile {
                         String dirXPackage = list[i].replace(packageDir + File.separator, "");
 
                         int slashLast = dirXPackage.lastIndexOf(File.separator);
-                        int dotjava = dirXPackage.lastIndexOf(".java");
-                        String namaClass = dirXPackage.substring(slashLast + 1, dotjava);
+                        //int dotjava = dirXPackage.lastIndexOf(".java");
                         String namaFile = dirXPackage.substring(slashLast + 1);
 
                         firstCommand = dirXPackage.replace(namaFile, "");
@@ -54,27 +54,31 @@ public class Compile {
                 int slashLast = list[i].lastIndexOf(File.separator);
                 String namaFile = list[i].substring(slashLast + 1); // Command 2
                 String path = list[i].replace(namaFile, "");
+                String workingDirectory = System.getProperty("user.dir");
+                String folder = workingDirectory + File.separator + "ERROR_LOG";
 
                 firstCommand = path;
                 secondCommand = namaFile;
-                System.out.println(firstCommand);
-                System.out.println(secondCommand);
 
                 try {
-                    if (pakej = true) {
-                        ProcessBuilder builder = new ProcessBuilder(
-                                "cmd.exe", "/c", "cd \"" + firstCommand + "\" && " + "javac" + " " + secondCommand);
-                        builder.redirectErrorStream(true);
-                        Process p = builder.start();
-                        BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
-                        String line2;
-                        while (true) {
-                            line2 = r.readLine();
-                            if (line2 == null) {
-                                break;
-                            }
+                    //if (pakej = true) {
+                    ProcessBuilder builder = new ProcessBuilder(
+                            "cmd.exe", "/c", "cd \"" + firstCommand + "\" && " + "javac" + " " + secondCommand);
+                    builder.redirectErrorStream(true);
+                    Process p = builder.start();
+                    BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+                    String line2;
+                    while (true) {
+                        line2 = r.readLine();
+                        if (line2 == null) {
+                            break;
                         }
-                    } else {
+                        PrintStream error_log = new PrintStream(new File(folder));
+                        System.setOut(error_log);
+                        error_log.print(line2);
+                        //}
+                    }
+                    /*else {
                         ProcessBuilder builder = new ProcessBuilder(
                                 "cmd.exe", "/c", "cd \"" + firstCommand + "\" && " + "javac -d" + " " + secondCommand);
                         builder.redirectErrorStream(true);
@@ -87,15 +91,15 @@ public class Compile {
                                 break;
                             }
                         }
-                    }
-                
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+                        
+                    }*/
 
+
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
         }
     }
-    }
 }
-
-

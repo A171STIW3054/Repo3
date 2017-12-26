@@ -49,7 +49,7 @@ public class Filter {
         String[] listJavaFile = new String[fb.size()];
         for (int i = 0; i < fb.size(); i++) {
             listJavaFile[i] = fb.get(i);
-            System.out.println(listJavaFile[i]);
+            //System.out.println(listJavaFile[i]);
         }
         return listJavaFile;
     }
