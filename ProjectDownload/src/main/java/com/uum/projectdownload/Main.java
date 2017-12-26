@@ -21,6 +21,8 @@ public class Main {
          String[] list=filter.listJavaFile;
          Compile get = new Compile();
          get.GetDir(list);
+         Run lari= new Run();
+         lari.Run(list);
     
 }  
     

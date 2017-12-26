@@ -12,7 +12,7 @@ public class CountThread extends Thread{
 	@Override
     public void run() {
         try {
-            for (int x = 0; x < 10500; x++) {
+            for (int x = 0; x < 10; x++) {
                 System.out.println(x);
                if((x % 50 == 0)&&(x != 0)){
             	System.out.println("--Check--"); 
