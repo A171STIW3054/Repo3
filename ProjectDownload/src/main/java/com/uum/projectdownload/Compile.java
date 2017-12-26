@@ -55,7 +55,7 @@ public class Compile {
                 String namaFile = list[i].substring(slashLast + 1); // Command 2
                 String path = list[i].replace(namaFile, "");
                 String workingDirectory = System.getProperty("user.dir");
-                String folder = workingDirectory + File.separator + "ERROR_LOG";
+                String folder = workingDirectory + File.separator + "ERROR_LOG.txt";
 
                 firstCommand = path;
                 secondCommand = namaFile;
