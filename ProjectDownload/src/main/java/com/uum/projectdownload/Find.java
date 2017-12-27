@@ -21,9 +21,10 @@ import org.json.JSONObject;
 public class Find {
 
     public JSONObject json = new JSONObject();
-    public JSONArray array = new JSONArray();
-    public JSONArray array1 = new JSONArray();
     public JSONObject json1 = new JSONObject();
+    public JSONObject json2 = new JSONObject();
+    public JSONArray array = new JSONArray();
+    public JSONArray array1 = new JSONArray(); 
     public JSONArray array2;
     public JSONObject item;
     public JSONObject item1;
