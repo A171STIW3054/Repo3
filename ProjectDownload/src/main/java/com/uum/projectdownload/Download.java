@@ -57,7 +57,7 @@ public class Download implements Runnable {
                 
                 PrintStream log = null;
                  try {
-                     String folder1 = workingDirectory + File.separator + "LOG.txt";
+                     String folder1 = workingDirectory + File.separator + "TEST_FILES.txt";
                      log = new PrintStream(new File(folder1));
                      System.setOut(log);
                      log.print(ex);
