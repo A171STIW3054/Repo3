@@ -113,7 +113,9 @@ public class Find {
         try {
             array2.put(json);
             array2.put(json1);
+            json2.put("INFORMATION",array2);
         } catch (JSONException ex) {
         }
+        System.out.println(json2.toString());
     }
 }
