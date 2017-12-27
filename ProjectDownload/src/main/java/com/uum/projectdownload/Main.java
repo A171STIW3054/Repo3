@@ -16,13 +16,16 @@ public class Main {
     
     public static void main (String args[]) throws IOException, GitAPIException {
          Download downld = new Download();
-         //downld.klon();
-         Filter filter = new Filter();
+         downld.klon();
+         FilterJava filter = new FilterJava();
          String[] list=filter.listJavaFile;
          Compile get = new Compile();
          get.GetDir(list);
          Run lari= new Run();
          lari.Run(list);
+         Find find=new Find();
+         find.CountKeyword(list);
+         find.FindLine(list);
     
 }  
     
